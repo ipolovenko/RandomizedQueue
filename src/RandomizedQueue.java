@@ -108,5 +108,35 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     }
 
     // unit testing
-    public static void main(String[] args) {}
+    public static void main(String[] args) {
+        RandomizedQueue<String> d = new RandomizedQueue<>();
+        d.enqueue("first");
+        StdOut.print("added first. size=" + d.size() + "\n");
+        d.enqueue("last");
+        StdOut.print("added last. size=" + d.size() + "\n");
+        StdOut.print("dequeue: " + d.dequeue() + " size=" + d.size() + "\n");
+        StdOut.print("dequeue: " + d.dequeue() + " size=" + d.size() + "\n");
+        String a[] = {"one", "two", "three", "four", "five"};
+        for (String s : a) {
+            d.enqueue(s);
+        }
+        StdOut.print("Iterating over the queue randomly.\n");
+        for (String s : d) {
+            StdOut.print(s + "\n");
+        }
+        StdOut.print("Iterating over the queue randomly.\n");
+        for (String s : d) {
+            StdOut.print(s + "\n");
+        }
+        d.enqueue("last1");
+        StdOut.print("added last1. size=" + d.size() + "\n");
+        d.enqueue("last2");
+        StdOut.print("added last2. size=" + d.size() + "\n");
+        StdOut.print("sample: " + d.sample() + " size=" + d.size() + "\n");
+        StdOut.print("sample: " + d.sample() + " size=" + d.size() + "\n");
+        while (!d.isEmpty()) {
+            StdOut.print(d.dequeue() + "\n");
+        }
+        StdOut.print("size=" + d.size() + "\n");
+    }
 }
